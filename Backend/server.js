@@ -31,3 +31,23 @@ app.get("/token", async (req, res) => {
 });
 
 app.listen(3000, () => console.log("Backend running on port 3000"));
+
+const express = require('express');
+const path = require('path');
+
+// Serve static frontend files
+app.use(express.static(path.join(__dirname, '../frontend/build')));
+
+// Handle all routes and send index.html
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '../frontend/build', 'index.html'));
+});
+
+// Your existing API routes
+app.get('/api/example', (req, res) => {
+  res.json({ message: 'Hello from backend!' });
+});
+
+// Start server
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
