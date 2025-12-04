@@ -32,7 +32,6 @@ app.get("/token", async (req, res) => {
 
 app.listen(3000, () => console.log("Backend running on port 3000"));
 
-const express = require('express');
 const path = require('path');
 
 // Serve static frontend files
