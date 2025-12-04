@@ -35,14 +35,14 @@ app.get("/token", async (req, res) => {
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-app.use(express.static(path.join(__dirname, "../frontend/build")));
+app.use(express.static(path.join(__dirname, '../Frontend')));
 
 app.get("/api/example", (req, res) => {
   res.json({ message: "Hello from backend!" });
 });
 
-app.use((req, res) => {
-  res.sendFile(path.join(__dirname, "../frontend/build/index.html"));
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '../Frontend/index.html'));
 });
 
 const PORT = process.env.PORT || 3000;
