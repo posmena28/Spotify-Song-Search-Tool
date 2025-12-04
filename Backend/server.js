@@ -35,13 +35,13 @@ app.get("/token", async (req, res) => {
   }
 });
 
-app.use(express.static(path.join(__dirname, "../Frontend")));
-
 app.get("/api/example", (req, res) => {
   res.json({ message: "Hello from backend!" });
 });
 
-app.get("/*", (req, res) => {
+app.use(express.static(path.join(__dirname, "../Frontend")));
+
+app.use((req, res) => {
   res.sendFile(path.join(__dirname, "../Frontend/index.html"));
 });
 
