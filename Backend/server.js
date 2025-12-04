@@ -2,6 +2,7 @@ import express from "express";
 import fetch from "node-fetch";
 import cors from "cors";
 import dotenv from "dotenv";
+import { fileURLToPath } from 'url';
 
 dotenv.config();
 
@@ -32,7 +33,8 @@ app.get("/token", async (req, res) => {
 
 app.listen(3000, () => console.log("Backend running on port 3000"));
 
-const path = require('path');
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 // Serve static frontend files
 app.use(express.static(path.join(__dirname, '../frontend/build')));
