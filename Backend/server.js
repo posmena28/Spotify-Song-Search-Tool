@@ -2,6 +2,7 @@ import express from "express";
 import fetch from "node-fetch";
 import cors from "cors";
 import dotenv from "dotenv";
+import path from 'path';
 import { fileURLToPath } from 'url';
 
 dotenv.config();
