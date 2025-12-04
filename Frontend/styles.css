@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Roboto&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
+img {
+    width: 100%;
+}
+
+body {
+    background-color: #121212;
+}
+
+/* 
+
+NAV
+
+*/
+
+nav {
+    display: flex;
+    margin: 24px 32px;
+    justify-content: space-between;
+}
+
+.nav__title {
+    font-size: 16px;
+    font-weight: 700;
+    font-style: italic;
+    display: flex;
+    align-items: center;
+    color: #1ed760;
+}
+
+.spotify__img {
+    height: 50px;
+    width: auto;
+}
+
+/* 
+
+LANDING PAGE
+
+*/
+
+.landing__page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.spotify__title {
+    font-size: 48px;
+    color: #1ed760;
+    font-weight: 900;
+    padding-bottom: 12px;
+}
+
+#searchInput {
+    border-radius: 20px;
+    border: none;
+    padding: 12px 24px;
+}
+
+#searchBtn {
+    padding: 12px 24px;
+    margin-left: 8px;
+    border-radius: 20px;
+    transition: all 300ms ease;
+    border: none;
+}
+
+button:hover {
+    background-color: #1ed760;
+}
+
+.song {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+      background-color: #9eeb9e50;
+      padding: 10px;
+      border-radius: 8px;
+      opacity: 0;
+      transform: translateY(10px);
+      transition: all 300ms ease;
+}
+
+.song.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.song img {
+      width: 80px;
+      height: 80px;
+      margin-right: 15px;
+      border-radius: 5px;
+}
+
+.song-info {
+      flex-grow: 1;
+}
+
+#results {
+    margin-top: 30px;
+    width: 60%;
+}
+
+.loading__tag {
+    color: white;
+    font-size: 28px;
+    text-align: center;
+}
