@@ -117,7 +117,7 @@ button:hover {
     text-align: center;
 }
 
-.backend__error--tag {
+.error__backend--tag {
     margin-top: 12px;
     color: white;
     text-align: center;
