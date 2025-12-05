@@ -1,5 +1,5 @@
 async function getToken() {
-  const res = await fetch("http://localhost:3000/token");
+  const res = await fetch("https://spotify-song-search-tool.onrender.com/getToken");
   const data = await res.json();
   return data.access_token;
 }
@@ -43,7 +43,7 @@ document.getElementById("searchBtn").addEventListener("click", async () => {
       }, index * 100); // stagger effect (optional)
     });
   } catch (err) {
-    resultsDiv.innerHTML = "Error fetching songs. Make sure the backend is running.";
+    resultsDiv.innerHTML = `<div class="error__backend--tag">Error fetching songs. Make sure the backend is running.</div>`;
     console.error(err);
   }
 });

@@ -116,3 +116,9 @@ button:hover {
     font-size: 28px;
     text-align: center;
 }
+
+.backend__error--tag {
+    margin-top: 12px;
+    color: white;
+    text-align: center;
+}
