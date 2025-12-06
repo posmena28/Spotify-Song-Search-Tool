@@ -1,5 +1,5 @@
 async function getToken() {
-  const res = await fetch("https://spotify-song-search-tool.onrender.com/getToken");
+  const res = await fetch("/getToken");
   const data = await res.json();
   return data.access_token;
 }
@@ -17,6 +17,7 @@ async function searchSong(query) {
 document.getElementById("searchBtn").addEventListener("click", async () => {
   const query = document.getElementById("searchInput").value;
   if (!query) return;
+
   const resultsDiv = document.getElementById("results");
   resultsDiv.innerHTML = `<div class="loading__tag">Loading...</div>`;
 
@@ -27,7 +28,8 @@ document.getElementById("searchBtn").addEventListener("click", async () => {
       return;
     }
 
-    resultsDiv.innerHTML = songs.map(song => `
+    resultsDiv.innerHTML = songs
+      .map(song => `
       <div class="song">
         <img src="${song.album.images[0].url}" alt="Album cover" />
         <div class="song-info">
@@ -39,11 +41,13 @@ document.getElementById("searchBtn").addEventListener("click", async () => {
 
     document.querySelectorAll(".song").forEach((el, index) => {
       setTimeout(() => {
-      el.classList.add("show");
-      }, index * 100); // stagger effect (optional)
+        el.classList.add("show");
+      }, index * 100);
     });
+
   } catch (err) {
-    resultsDiv.innerHTML = `<div class="error__backend--tag">Error fetching songs. Make sure the backend is running.</div>`;
     console.error(err);
+    resultsDiv.innerHTML =
+      `<div class="error__backend--tag">Error fetching songs. Make sure the backend is running.</div>`;
   }
 });
