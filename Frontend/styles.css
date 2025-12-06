@@ -122,3 +122,27 @@ button:hover {
     color: white;
     text-align: center;
 }
+
+/* LARGE SMARTPHONES, TABLETS */
+@media (max-width: 768px) {
+    .spotify__title {
+        font-size: 36px;
+        margin-bottom: 12px;
+    }
+}
+
+/* SMALL PHONES */
+@media (max-width: 480px) {
+    .spotify__title {
+        font-size: 24px;
+        margin-bottom: 12px;
+    }
+    .nav__title {
+        display: none;
+    }
+    nav {
+        display: flex;
+        justify-content: center;
+    }
+
+}
